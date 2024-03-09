@@ -1,32 +1,25 @@
-
 pipeline {
-agent any
-DEZ1CS351
-stages {
-stage('Build') { steps {
-}
-}
-sh 'mvn clean install'
-echo 'Build Stage Successful'
-stage('Test') { steps {
-sh 'mvn test'
-echo 'Test Stage Successful'
-post {
-always {
-}
-junit 'target/surefire-reports/*.xml'
-}
-}
-}
-stage('Deploy') {
-steps {
-sh 'mvn deploy'
-echo 'Deployment Successful'
-}
-}
-post {
-failure {
-}
-echo 'Pipeline failed'
-}
-}
+  agent any
+  stages {
+    stage('Bui1d') {
+      steps {
+      build 'PES2UG21CS474-1'
+      sh nfjjefbwke
+      }
+    }
+    stage('Test') {
+      steps {
+        sh './output'
+      }
+    }
+    stage( 'Deploy') {
+      steps {
+        echo 'deploy'
+      }
+    }
+  }
+  post {
+    failure {
+      echo 'pipeline failed'
+    }
+  }
