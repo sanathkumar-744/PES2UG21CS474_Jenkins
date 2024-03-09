@@ -5,6 +5,7 @@ pipeline {
       steps {
       build 'PES2UG21CS474-1'
       sh 'g++ w.cpp -o output'
+        erer
       }
     }
     stage('Test') {
